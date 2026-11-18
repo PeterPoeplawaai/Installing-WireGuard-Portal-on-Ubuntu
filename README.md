@@ -2,6 +2,19 @@
 
 This guide walks you through installing WireGuard Portal (`wg-portal`) on top of an existing WireGuard installation on Ubuntu 24.04. WireGuard Portal interacts directly with your local system's WireGuard network interfaces using the local backend configuration.
 ---
+## What is WireGuard Portal?
+
+**WireGuard Portal (`wg-portal`)** is a lightweight, self-hosted web management interface and REST API for WireGuard VPN servers. Built as a single native Go binary, it sits on top of an existing WireGuard installation and communicates directly with the Linux kernel via `wgctrl`—allowing you to create, modify, or revoke peers in real time without restarting interfaces or dropping active VPN connections.
+
+### Key Capabilities
+
+* **Zero-Downtime Peer & Interface Management:** Manage multiple local WireGuard interfaces (`wg0`, `wg1`, etc.) and apply peer changes live in kernel space without service interruptions.
+* **User Self-Service Portal:** Users can log in to view their assigned devices, download `.conf` files, or scan QR codes to set up mobile and desktop clients independently.
+* **Enterprise Authentication:** Supports local user accounts alongside external identity providers via **LDAP / Active Directory**, **OAuth 2.0 / OIDC**, and **Passkeys (WebAuthn)**.
+* **Automated Lifecycle & Access Control:** Enforce automatic peer expiration dates, toggle peer access on the fly, and distribute configuration files directly via email.
+* **API & Observability:** Exposes a full REST API, webhook triggers, and a Prometheus metrics endpoint for monitoring active connections and bandwidth usage.
+
+
 ### Prerequisites
 - An Ubuntu 24.04 server with `sudo` or `root` privileges.
 - An existing, functional WireGuard installation (e.g., `wg0`).
