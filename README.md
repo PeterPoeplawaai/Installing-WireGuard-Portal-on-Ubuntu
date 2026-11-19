@@ -49,7 +49,9 @@ Create and open the YAML configuration file at `/opt/wg-portal/config/config.yml
 ```bash
 sudo nano /opt/wg-portal/config/config.yml
 ```
-Paste the following configuration template into the file. Be sure to replace `YOUR_SERVER_IP` and generate strong, random strings for `session_secret` and `csrf_secret`:
+Paste the following configuration template into the file. Be sure to replace `YOUR_SERVER_IP` and generate strong, random strings for `session_secret` and `csrf_secret`.
+
+> **Note:** You can generate random secrets in your terminal using `openssl rand -hex 32`.
 ```yaml
 logLevel: info
 
@@ -68,7 +70,6 @@ web:
   session_secret: change-this-to-a-random-secure-string
   csrf_secret: change-this-to-another-random-secure-string
 ```
-(Tip: You can generate random secrets in your terminal using `openssl rand -hex 32`.)
 ---
 ### Step 4: Create a Systemd Service
 To manage WireGuard Portal as a background service that starts automatically on boot, create a systemd unit file:
