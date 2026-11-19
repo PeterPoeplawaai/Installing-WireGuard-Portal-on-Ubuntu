@@ -27,7 +27,7 @@ uname -m
 ```
 For standard 64-bit Intel/AMD systems (`x86_64`), download the latest release binary:
 ```bash
-export WG_PORTAL_VERSION="v2.1.0"
+export WG_PORTAL_VERSION="v2.3.1"
 wget -O wg-portal https://github.com/h44z/wg-portal/releases/download/${WG_PORTAL_VERSION}/wg-portal_linux_amd64
 ```
 Verify that the downloaded binary is valid:
