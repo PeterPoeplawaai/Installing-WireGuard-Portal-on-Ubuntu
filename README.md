@@ -109,7 +109,13 @@ sudo systemctl status wg-portal
 ```
 ---
 ### Step 6: Access the Web Interface
-Ensure port `8888/tcp` is allowed through your firewall (e.g., `sudo ufw allow 8888/tcp`), or configure a reverse proxy with HTTPS.
+Ensure port `8888/tcp` is allowed through your firewall (or configure a reverse proxy with HTTPS).
+
+```bash
+sudo iptables -I INPUT 3 -i wg0 -p tcp --dport 8888 -j ACCEPT
+sudo netfilter-persistent save
+```
+
 Open your web browser and navigate to `http://YOUR_SERVER_IP:8888`.
 Log in using the initial administrator credentials (or follow the on-screen setup prompts to create your admin account on first launch).
 From the dashboard, import or manage your existing WireGuard interfaces and configure peers.
