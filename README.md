@@ -117,5 +117,11 @@ sudo netfilter-persistent save
 ```
 
 Open your web browser and navigate to `http://YOUR_SERVER_IP:8888`.
-Log in using the initial administrator credentials (or follow the on-screen setup prompts to create your admin account on first launch).
-From the dashboard, import or manage your existing WireGuard interfaces and configure peers.
+Log in using the initial administrator credentials:
+
+```initial credentials:
+Username: admin@wgportal.local
+Password: wgportal-default
+```
+
+From the dashboard, import or manage your existing WireGuard interfaces and configure peers. Don't forget to change the default password!
